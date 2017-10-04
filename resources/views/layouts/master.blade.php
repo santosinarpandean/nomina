@@ -113,7 +113,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="{{URL::to('/')}}/images/user_images/{{auth::user()->image}}" alt="">{{auth::user()->name.', Saldo : '}}<strong>{{auth::user()->saldo}}</strong>
+                                <img src="{{URL::to('/')}}/images/user_images/{{auth::user()->image}}" alt="">{{auth::user()->name.', Saldo : '}}<strong>Rp. {{number_format(auth::user()->saldo,0,',','.')}}</strong>
                             </a>
                         </li>
                     </ul>
