@@ -49,13 +49,13 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nama Bank<span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <select class="form-control">
-                                            <option value="Mandiri" selected>Mandiri</option>
+                                        <select name="bank" class="form-control">
                                             <option value="BNI">BNI</option>
                                             <option value="BRI">BRI</option>
                                             <option value="CIMB">CIMB NIAGA</option>
-                                            <option value="PANIN">PANIN</option>
                                             <option value="DANAMON">DANAMON</option>
+                                            <option value="Mandiri">Mandiri</option>
+                                            <option value="PANIN">PANIN</option>
                                             <option value="PERMATA">PERMATA</option>
                                         </select>
                                         {{--<input name="bank" type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">--}}
