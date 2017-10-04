@@ -50,7 +50,7 @@
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <select class="form-control">
-                                            <option value="Mandiri">Mandiri</option>
+                                            <option value="Mandiri" selected>Mandiri</option>
                                             <option value="BNI">BNI</option>
                                             <option value="BRI">BRI</option>
                                             <option value="CIMB">CIMB NIAGA</option>
