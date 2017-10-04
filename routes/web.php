@@ -18,7 +18,7 @@ Route::get('/','IndexController@dashboard');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'IndexController@dashboard')->name('home');
 Route::get('/transfer','IndexController@transfer');
 Route::POST('/do-transfer','IndexController@doTransfer');
 
