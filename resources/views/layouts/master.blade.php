@@ -85,12 +85,13 @@
 
                 <!-- /menu footer buttons -->
                 <div class="sidebar-footer hidden-small">
-                    <a href="{{URL::to('/form-edit-profile')}}" data-toggle="tooltip" data-placement="top" title="Edit Profile">
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                    </a>
                     <a href="{{URL::to('/logout')}}" data-toggle="tooltip" data-placement="top" title="Logout">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                     </a>
+                    <a data-toggle="tooltip" data-placement="top" title="Edit Profile">
+                        <span class="glyphicon glyphicon" aria-hidden="true"></span>
+                    </a>
+
                     <a data-toggle="tooltip" data-placement="top" title="FullScreen">
                         <span class="glyphicon glyphicon-" aria-hidden="true"></span>
                     </a>
@@ -113,7 +114,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="{{URL::to('/')}}/images/user_images/{{auth::user()->image}}" alt="">{{auth::user()->name.', Saldo : '}}<strong>Rp. {{number_format(auth::user()->saldo,0,',','.')}}</strong>
+                                <img src="{{URL::to('/')}}/images/user_images/default_image.png" alt="">{{auth::user()->name.', Saldo : '}}<strong>Rp. {{number_format(auth::user()->saldo,0,',','.')}}</strong>
                             </a>
                         </li>
                     </ul>
@@ -325,7 +326,7 @@
 <!-- jQuery autocomplete -->
 <script src="{{URL::to('/gentelella')}}/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
 <!-- starrr -->
-<script src="{{URL::to('/gentelella')}}/vendors/starrr/dist/starrr.js"></script>
+<script src="{{URL::to('/gentelella')}}ut/vendors/starrr/dist/starrr.js"></script>
 
 <!-- bootstrap-daterangepicker -->
 <script>
