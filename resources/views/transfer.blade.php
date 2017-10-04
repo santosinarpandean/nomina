@@ -50,13 +50,10 @@
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <select name="bank" class="form-control">
-                                            <option value="BNI">BNI</option>
-                                            <option value="BRI">BRI</option>
-                                            <option value="CIMB">CIMB NIAGA</option>
-                                            <option value="DANAMON">DANAMON</option>
-                                            <option value="Mandiri">Mandiri</option>
-                                            <option value="PANIN">PANIN</option>
-                                            <option value="PERMATA">PERMATA</option>
+                                            @forelse($data['list_bank'] as $key => $value)
+                                            <option value="{{$key}}">{{$key}}</option>
+                                            @empty
+                                            @endforelse
                                         </select>
                                         {{--<input name="bank" type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">--}}
                                     </div>
