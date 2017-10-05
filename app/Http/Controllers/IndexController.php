@@ -107,13 +107,16 @@ class IndexController extends Controller
         $input['id_user']   = auth::user()->id;
         DB::beginTransaction();
         try{
-            if($input['jumlah']<=auth::user()->saldo){
+            if($input['jumlah']<=auth::user()->saldo AND $input['jumlah'] > 0){
                 mutasi::create($input);
                 //update saldo member
                 users::updateSaldoMember($input['jumlah']);
                 DB::commit();
                 session()->flash('result','Transfer success, you can check the mutation');
-            }else{
+            }if($input['jumlah']<0){
+                session()->flash('result','Amount transfer invalid');
+            }
+            else{
                 session()->flash('result','You do not have enough money to do the transfer');
             }
             return redirect()->back();
