@@ -8,6 +8,7 @@ use App\MutasiModel     as mutasi;
 use App\User            as users;
 use DB;
 use Auth;
+use Validator;
 
 class IndexController extends Controller
 {
@@ -105,15 +106,26 @@ class IndexController extends Controller
     public function doTransfer(){
         $input              = input::except('_token');
         $input['id_user']   = auth::user()->id;
+        $rules          = ['nama_rek'      => 'required',
+            'no_rek'  => 'required',
+            'bank'  => 'required',
+            'jumlah' => 'required|numeric',
+        ];
+        $validator                      = Validator::make($input, $rules);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }
         DB::beginTransaction();
+
         try{
             if($input['jumlah']<=auth::user()->saldo AND $input['jumlah'] > 0){
+
                 mutasi::create($input);
                 //update saldo member
                 users::updateSaldoMember($input['jumlah']);
                 DB::commit();
                 session()->flash('result','Transfer success, you can check the mutation');
-            }if($input['jumlah']<0){
+            }else if($input['jumlah']<0){
                 session()->flash('result','Amount transfer invalid');
             }
             else{
