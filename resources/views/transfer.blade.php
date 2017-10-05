@@ -27,7 +27,10 @@
                         <div class="x_content">
                             <br />
                             @if(session()->get('result'))
-                                {{session()->get('result')}}
+                                <div class="alert alert-info">
+                                    <strong>{{session()->get('result')}}</strong>
+                                </div>
+
                             @endif
                             <form method="post" action="{{URL::to('/do-transfer')}}" data-parsley-validate class="form-horizontal form-label-left">
                                 {!! csrf_field() !!}
