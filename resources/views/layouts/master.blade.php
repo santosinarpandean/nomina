@@ -325,8 +325,7 @@
 <script src="{{URL::to('/gentelella')}}/vendors/autosize/dist/autosize.min.js"></script>
 <!-- jQuery autocomplete -->
 <script src="{{URL::to('/gentelella')}}/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
-<!-- starrr -->
-<script src="{{URL::to('/gentelella')}}ut/vendors/starrr/dist/starrr.js"></script>
+
 
 <!-- bootstrap-daterangepicker -->
 <script>
@@ -519,26 +518,6 @@
     });
 </script>
 <!-- /jQuery autocomplete -->
-
-<!-- Starrr -->
-<script>
-    $(document).ready(function() {
-        $(".stars").starrr();
-
-        $('.stars-existing').starrr({
-            rating: 4
-        });
-
-        $('.stars').on('starrr:change', function (e, value) {
-            $('.stars-count').html(value);
-        });
-
-        $('.stars-existing').on('starrr:change', function (e, value) {
-            $('.stars-count-existing').html(value);
-        });
-    });
-</script>
-<!-- /Starrr -->
 {{--END SCRIPT FOR FORM--}}
 
 </body>
